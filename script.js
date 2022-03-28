@@ -39,7 +39,6 @@ for (let i = 0; i < words.length; i++) {
 
   words[i].addEventListener("click", () => {
     let wordPosition = words[i].getBoundingClientRect();
-    console.log("inital word position", wordPosition);
 
     let yTravel =
       wordPosition.y -
@@ -62,7 +61,7 @@ for (let i = 0; i < words.length; i++) {
   });
 }
 
-console.log(originArray);
+console.log("ORIGIN ARRAY", originArray);
 
 function reCalculateDestination(wordPositionWidth) {
   destinationPositionDefault.x =
