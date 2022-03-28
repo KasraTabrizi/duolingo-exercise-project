@@ -12,7 +12,7 @@ body {
 .wrapper {
   border: 1px solid black;
   height: 90vh;
-  width: 50vw;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,16 +40,17 @@ body {
 }
 
 .word {
+  position: relative;
   border: 1px solid rgba(179, 179, 179, 0.5);
-  margin: 1em 1em;
+  margin: 0 1em;
   padding: 0.5em 1em;
   border-radius: 15px;
-  box-shadow: 0px 3px 0px 0px #b4b4b4;
-  transition: 0.05s all ease-in-out;
+  box-shadow: 0px 3px 0px 0px rgba(179, 179, 179, 0.5);
+  transition: 0.3s transform ease-in-out;
   cursor: pointer;
 }
 
-.word:active {
+/* .word:active {
   transform: translateY(2px);
   box-shadow: none;
-}
+} */
