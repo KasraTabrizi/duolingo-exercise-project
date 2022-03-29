@@ -1,12 +1,10 @@
 //DECLARE HTML CLASS, ID, TAG VARIABLES
 const destinationContainer = document.getElementById("destination__container");
-console.log(destinationContainer.getBoundingClientRect());
 const words = document.getElementsByClassName("word");
 
 let destinationPosDefault = destinationContainer.getBoundingClientRect();
 
 //DECLARE CODE VARIABLES
-
 //store coordinates of the words by order of their placement.
 let destinationArray = [];
 
@@ -14,7 +12,6 @@ let destinationArray = [];
 const originArray = [];
 
 function calibrateDestinationCursorPos(destinationArray) {
-  console.log(destinationArray);
   //When no word is clicked on
   if (destinationArray.length === 0) {
     return destinationPosDefault.x;
@@ -25,7 +22,6 @@ function calibrateDestinationCursorPos(destinationArray) {
     destinationArray.forEach((element) => {
       sum += element.width + 20;
     });
-    console.log(sum);
     return sum;
   }
 }
@@ -43,25 +39,20 @@ for (let i = 0; i < words.length; i++) {
 
   words[i].addEventListener("click", () => {
     //Check de destinationStartPos
-    destinationStartPos = calibrateDestinationCursorPos(destinationArray); //X
-    console.log("destinationStartPos", destinationStartPos);
+    destinationStartPos = calibrateDestinationCursorPos(destinationArray);
 
-    //Calculate X and Y distance between destination and the word
+    //Calculate X and Y distance between destination and the wor
     let yTravel =
       originArray[i].y -
       (destinationPosDefault.y +
         (destinationPosDefault.height - originArray[i].height) / 2);
 
-    console.log("position x origin", originArray[i].x);
     let xTravel = 0;
     if (originArray[i].x > destinationStartPos) {
       xTravel = -(originArray[i].x - destinationStartPos);
     } else {
       xTravel = destinationStartPos - originArray[i].x;
     }
-
-    console.log("X Travel", xTravel);
-    console.log("Y Travel", yTravel);
 
     if (originArray[i].location === "origin") {
       yTravel *= -1;
@@ -76,16 +67,9 @@ for (let i = 0; i < words.length; i++) {
         (wordObject) => wordObject.word !== originArray[i].word
       );
       destinationArray = test;
-      console.log(destinationArray);
     }
-
-    console.log(originArray[i]);
 
     //Apply translate
     words[i].style.transform = `translate(${xTravel}px,${yTravel}px)`;
-
-    console.log("*****************************************");
   });
 }
-
-console.log("ORIGIN ARRAY", originArray);
