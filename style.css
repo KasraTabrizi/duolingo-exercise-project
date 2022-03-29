@@ -5,13 +5,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   user-select: none;
 }
 
 .wrapper {
   border: 1px solid black;
-  height: 90vh;
+  height: 50vh;
   width: 80vw;
   display: flex;
   flex-direction: column;
@@ -46,11 +46,11 @@ body {
   padding: 0.5em 1em;
   border-radius: 15px;
   box-shadow: 0px 3px 0px 0px rgba(179, 179, 179, 0.5);
-  transition: 0.3s transform ease-in-out;
+  transition: 0.2s transform ease-in-out;
   cursor: pointer;
 }
 
-/* .word:active {
+.word:active {
   transform: translateY(2px);
   box-shadow: none;
-} */
+}

@@ -8,14 +8,13 @@ let destinationPosDefault = destinationContainer.getBoundingClientRect();
 //DECLARE CODE VARIABLES
 
 //store coordinates of the words by order of their placement.
-const destinationArray = [];
+let destinationArray = [];
 
 //store coordinates of the words in the origin array
 const originArray = [];
 
-const translate = [{ x: 0, y: 0 }];
-
 function calibrateDestinationCursorPos(destinationArray) {
+  console.log(destinationArray);
   //When no word is clicked on
   if (destinationArray.length === 0) {
     return destinationPosDefault.x;
@@ -39,13 +38,6 @@ function createOriginArray(word) {
   originArray.push(newWordObject);
 }
 
-function reCalculateDestination(wordPositionWidth) {
-  destinationPosDefault.x = destinationPosDefault.x + wordPositionWidth + 20;
-  console.log(destinationPosDefault);
-}
-
-// function moveWordToDestination(wordPosition) {}
-
 for (let i = 0; i < words.length; i++) {
   createOriginArray(words[i]);
 
@@ -60,6 +52,7 @@ for (let i = 0; i < words.length; i++) {
       (destinationPosDefault.y +
         (destinationPosDefault.height - originArray[i].height) / 2);
 
+    console.log("position x origin", originArray[i].x);
     let xTravel = 0;
     if (originArray[i].x > destinationStartPos) {
       xTravel = -(originArray[i].x - destinationStartPos);
@@ -73,20 +66,24 @@ for (let i = 0; i < words.length; i++) {
     if (originArray[i].location === "origin") {
       yTravel *= -1;
       originArray[i].location = "destination";
+      //Put the word object in the destination array
+      destinationArray.push(originArray[i]);
     } else if (originArray[i].location === "destination") {
-      yTravel *= -1;
-      xTravel *= -1;
+      yTravel = 0;
+      xTravel = 0;
       originArray[i].location = "origin";
+      let test = destinationArray.filter(
+        (wordObject) => wordObject.word !== originArray[i].word
+      );
+      destinationArray = test;
+      console.log(destinationArray);
     }
 
     console.log(originArray[i]);
 
     //Apply translate
     words[i].style.transform = `translate(${xTravel}px,${yTravel}px)`;
-    //Put the word object in the destination array
-    destinationArray.push(originArray[i]);
 
-    //reCalculateDestination(originArray[i].width);
     console.log("*****************************************");
   });
 }
