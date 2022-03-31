@@ -73,3 +73,4 @@ The goal is to try to recreate the UI/UX but also the logic as close as Duolingo
 - [ ] Make everything as modular as possible. (DRY method)
 - [ ] Refactor and clean
 - [x] Add comments where necessary
+- [ ] Play audio of a word when hovering over a word with a dashed bottom border
