@@ -4,6 +4,10 @@ _I am a huge fan of Duolingo and I use it daily to learn Spanish. As a challenge
 
 Note: This is made for educational purpose only. This project **will not** be used for commercial use.
 
+## Demo
+
+[Live Demo](https://kasratabrizi.github.io/duolingo-exercise-project/)
+
 ## Goal
 
 The goal is to try to recreate the UI/UX but also the logic as close as Duolingo's version.
