@@ -15,13 +15,22 @@ const originArray = [];
 
 //Pick a random exercise from the list
 let exercise = exercises[Math.floor(Math.random() * exercises.length)];
-let englishSentenceArr = exercise.english.split(" ");
+let englishSentence = exercise.english.split(" ");
+let listOfWords = exercise.list;
 
-console.log(englishSentenceArr);
-for (let i = 0; i < englishSentenceArr.length; i++) {
+//Print the sentence in the speech bubble
+for (let i = 0; i < englishSentence.length; i++) {
   const spanNode = document.createElement("span");
-  spanNode.textContent = englishSentenceArr[i];
+  spanNode.textContent = englishSentence[i];
   originalText.appendChild(spanNode);
+}
+
+//Print the list of words
+for (let i = 0; i < listOfWords.length; i++) {
+  const wordNode = document.createElement("div");
+  wordNode.textContent = listOfWords[i];
+  wordNode.classList.add("word");
+  originContainer.appendChild(wordNode);
 }
 
 function calibrateDestinationCursorPos(destinationArray) {
