@@ -66,7 +66,7 @@ The goal is to try to recreate the UI/UX but also the logic as close as Duolingo
 ### Javascript
 
 - [x] Create necessary variables of all the tags, classes and id's
-- [ ] Randomize the order of the list of words
+- [x] Randomize the order of the list of words
 - [x] Add other words in the list that are not going to be used
 - [x] Create an eventlistener for each word
 - [x] Calculate the distance each word needs to travel
@@ -76,3 +76,4 @@ The goal is to try to recreate the UI/UX but also the logic as close as Duolingo
 - [ ] Refactor and clean
 - [x] Add comments where necessary
 - [ ] Play audio of a word when hovering over a word with a dashed bottom border
+- [x] Pick a random exercise
