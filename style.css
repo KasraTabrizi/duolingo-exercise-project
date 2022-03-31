@@ -25,6 +25,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 5em;
 }
 
 h1 {
@@ -46,7 +47,7 @@ h1 {
 }
 
 img {
-  width: 20%;
+  width: 150px;
   display: block;
 }
 
