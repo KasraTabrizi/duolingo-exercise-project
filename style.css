@@ -100,6 +100,16 @@ span {
   font-weight: 400;
 }
 
+.word__container {
+  margin: 0 0.2em;
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius);
+}
+
+.word__container:empty {
+  background: var(--grey-color);
+}
+
 .word:active {
   transform: translateY(2px);
   box-shadow: none;
