@@ -1,5 +1,7 @@
 //DECLARE HTML CLASS, ID, TAG VARIABLES
 const destinationContainer = document.getElementById("destination__container");
+const originContainer = document.getElementById("origin__container");
+const originalText = document.getElementById("original__text");
 const words = document.getElementsByClassName("word");
 
 let destinationPosDefault = destinationContainer.getBoundingClientRect();
@@ -10,6 +12,17 @@ let destinationArray = [];
 
 //store coordinates of the words in the origin array
 const originArray = [];
+
+//Pick a random exercise from the list
+let exercise = exercises[Math.floor(Math.random() * exercises.length)];
+let englishSentenceArr = exercise.english.split(" ");
+
+console.log(englishSentenceArr);
+for (let i = 0; i < englishSentenceArr.length; i++) {
+  const spanNode = document.createElement("span");
+  spanNode.textContent = englishSentenceArr[i];
+  originalText.appendChild(spanNode);
+}
 
 function calibrateDestinationCursorPos(destinationArray) {
   //When no word is clicked on

@@ -50,7 +50,7 @@ img {
   display: block;
 }
 
-.original__text {
+#original__text {
   border: 2px solid var(--grey-color);
   padding: 1em;
   width: auto;
@@ -62,6 +62,7 @@ img {
 span {
   display: inline-block;
   border-bottom: 2px dashed var(--darker-grey-color);
+  margin-right: 5px;
 }
 
 #destination__container {
