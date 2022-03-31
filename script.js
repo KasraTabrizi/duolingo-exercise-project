@@ -55,7 +55,6 @@ for (let i = 0; i < words.length; i++) {
     }
 
     if (originArray[i].location === "origin") {
-      yTravel *= -1;
       originArray[i].location = "destination";
       //Put the word object in the destination array
       destinationArray.push(originArray[i]);
@@ -63,6 +62,7 @@ for (let i = 0; i < words.length; i++) {
       yTravel = 0;
       xTravel = 0;
       originArray[i].location = "origin";
+      //delete the word from the destination Array
       let test = destinationArray.filter(
         (wordObject) => wordObject.word !== originArray[i].word
       );
@@ -70,6 +70,6 @@ for (let i = 0; i < words.length; i++) {
     }
 
     //Apply translate
-    words[i].style.transform = `translate(${xTravel}px,${yTravel}px)`;
+    words[i].style.transform = `translate(${xTravel}px,-${yTravel}px)`;
   });
 }
