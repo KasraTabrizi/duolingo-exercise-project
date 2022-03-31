@@ -67,7 +67,7 @@ The goal is to try to recreate the UI/UX but also the logic as close as Duolingo
 
 - [x] Create necessary variables of all the tags, classes and id's
 - [ ] Randomize the order of the list of words
-- [ ] Add other words in the list that are not going to be used
+- [x] Add other words in the list that are not going to be used
 - [x] Create an eventlistener for each word
 - [x] Calculate the distance each word needs to travel
 - [x] Make sure the words go back to their original position when clicked on them again.
