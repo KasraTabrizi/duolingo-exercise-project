@@ -20,7 +20,7 @@ function calibrateDestinationCursorPos(destinationArray) {
     //as starting point for the next word.
     let sum = destinationPosDefault.x;
     destinationArray.forEach((element) => {
-      sum += element.width + 20;
+      sum += element.width + 20; //add 20px for the spacing
     });
     return sum;
   }
@@ -41,7 +41,7 @@ for (let i = 0; i < words.length; i++) {
     //Check de destinationStartPos
     destinationStartPos = calibrateDestinationCursorPos(destinationArray);
 
-    //Calculate X and Y distance between destination and the wor
+    //Calculate X and Y distance between destination and the word
     let yTravel =
       originArray[i].y -
       (destinationPosDefault.y +
