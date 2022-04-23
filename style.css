@@ -16,6 +16,7 @@ body {
   user-select: none;
   font-family: "Fredoka";
   color: var(--text-color);
+  background-color: rgb(250, 250, 250);
 }
 
 .wrapper {
